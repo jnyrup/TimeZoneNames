@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishAot>true</PublishAot>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>full</TrimMode>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+
+    <!-- Make trimming as aggressive as possible -->
+    <!-- https://github.com/dotnet/runtime/blob/main/docs/workflow/trimming/feature-switches.md -->
+    <!-- https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/optimizing.md -->
+    <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+    <CustomResourceTypesSupport>false</CustomResourceTypesSupport>
+    <DebuggerSupport>false</DebuggerSupport>
+    <EnableCppCLIHostActivation>false</EnableCppCLIHostActivation>
+    <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+    <EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>false</EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>
+    <EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+    <EventSourceSupport>false</EventSourceSupport>
+    <!-- IlcDisableReflection is needed to load embedded resource via reflection -->
+    <IlcDisableReflection>false</IlcDisableReflection>
+    <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+    <IlcDisableUnhandledExceptionExperience>false</IlcDisableUnhandledExceptionExperience>
+    <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+    <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+    <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+    <IlcOptimizationPreference>Size</IlcOptimizationPreference>
+    <IlcTrimMetadata>true</IlcTrimMetadata>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <NullabilityInfoContextSupport>false</NullabilityInfoContextSupport>
+    <PredefinedCulturesOnly>true</PredefinedCulturesOnly>
+    <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies>
+    <StartupHookSupport>false</StartupHookSupport>
+    <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+    <UseNativeHttpHandler>true</UseNativeHttpHandler>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <_AggressiveAttributeTrimming>true</_AggressiveAttributeTrimming>
+    <_EnableConsumingManagedCodeFromNativeHosting>false</_EnableConsumingManagedCodeFromNativeHosting>
+    <VerifyDependencyInjectionOpenGenericServiceTrimmability>true</VerifyDependencyInjectionOpenGenericServiceTrimmability>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\TimeZoneNames\TimeZoneNames.csproj" />
+  </ItemGroup>
+
+</Project>
